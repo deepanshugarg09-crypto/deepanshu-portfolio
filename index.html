@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Deepanshu Garg | Staff+ Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepanshu Garg | Staff Software Engineer</title>
 
 <style>
 :root {
   --bg: #0b0f19;
+  --panel: #020617;
   --card: #111827;
   --text: #e5e7eb;
   --muted: #9ca3af;
@@ -15,128 +16,163 @@
   --border: #1f2937;
 }
 
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Inter, -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
 }
 
-.container {
-  max-width: 980px;
-  margin: auto;
-  padding: 48px 24px;
+/* Layout */
+.wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
 }
 
-h1 {
-  font-size: 2.6rem;
-  margin: 0;
+/* LEFT PANEL */
+.sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 28px 22px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
-h2 {
-  margin-top: 50px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 6px;
-  color: var(--accent);
+.name {
   font-size: 1.4rem;
+  font-weight: 700;
 }
 
-.subtitle {
+.role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.download {
+  display: block;
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 16px 0;
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.stack span {
+  display: inline-block;
+  background: #1f2937;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 4px 4px 0 0;
+  font-size: 0.75rem;
+}
+
+/* RIGHT SIDE */
+.content {
+  padding: 40px 48px;
+  max-width: 900px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.3rem;
+}
+
+.tagline {
   color: var(--muted);
   margin-top: 6px;
 }
 
-.hero {
-  margin-bottom: 30px;
-}
-
 .impact {
+  margin-top: 18px;
   font-size: 1.05rem;
-  margin-top: 20px;
   color: #cbd5f5;
 }
 
+/* Cards */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 20px;
   border-radius: 12px;
-  margin-top: 16px;
+  padding: 18px;
+  margin-top: 18px;
 }
 
-.badges span {
-  display: inline-block;
-  background: #1f2937;
-  padding: 6px 10px;
-  border-radius: 6px;
-  margin: 4px;
-  font-size: 0.85rem;
+h2 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin: 26px 0 10px;
 }
 
+/* Metrics */
 .metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .metric {
   background: #020617;
   border: 1px solid var(--border);
-  padding: 14px;
+  padding: 12px;
   border-radius: 10px;
+  min-width: 110px;
   text-align: center;
 }
 
 .metric strong {
-  font-size: 1.4rem;
-  color: white;
   display: block;
+  font-size: 1.2rem;
 }
 
-a {
+/* Projects */
+.project {
+  margin-bottom: 14px;
+}
+
+.project a {
   color: var(--accent);
+  font-weight: 600;
   text-decoration: none;
 }
 
-.download {
-  display: inline-block;
-  background: #2563eb;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: 16px;
-}
-
-.download:hover {
-  background: #1d4ed8;
-}
-
-.footer {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
+.project p {
+  margin: 4px 0 0;
   font-size: 0.9rem;
+  color: var(--muted);
 }
+
 </style>
 </head>
 
 <body>
-<div class="container">
+<div class="wrapper">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Deepanshu Garg</h1>
-    <div class="subtitle">Senior Staff Software Engineer • Systems & Distributed Platforms</div>
-
-    <p class="impact">
-      I build <strong>high-performance native systems</strong> and <strong>planet-scale infrastructure</strong>
-      across endpoint security, distributed telemetry, and observability platforms.
-      15+ years shipping production-critical software used across millions of devices.
-    </p>
+  <!-- LEFT PANEL -->
+  <aside class="sidebar">
+    <div class="name">Deepanshu Garg</div>
+    <div class="role">Staff Software Engineer</div>
 
     <a href="Deepanshu_Garg_Resume.pdf"
        download="Deepanshu_Garg_Staff_Engineer.pdf"
@@ -144,97 +180,115 @@ a {
        ⬇ Download Resume
     </a>
 
-    <!-- Credibility metrics -->
-    <div class="metrics">
-      <div class="metric">
-        <strong>15+</strong>
-        Years Experience
-      </div>
-      <div class="metric">
-        <strong>Millions</strong>
-        Devices Impacted
-      </div>
-      <div class="metric">
-        <strong>C++</strong>
-        Systems Expertise
-      </div>
-      <div class="metric">
-        <strong>Staff+</strong>
-        Technical Leadership
-      </div>
-    </div>
-  </div>
-
-  <!-- EXPERTISE -->
-  <h2>Core Expertise</h2>
-  <div class="card badges">
-    <span>Modern C++ (C++17/20)</span>
-    <span>Distributed Systems</span>
-    <span>Endpoint Security</span>
-    <span>Observability Platforms</span>
-    <span>Performance Engineering</span>
-    <span>Multi-threaded Systems</span>
-    <span>IPC & OS Internals</span>
-    <span>Low Latency Design</span>
-    <span>Memory Optimization</span>
-    <span>Native Agents</span>
-    <span>Telemetry Pipelines</span>
-    <span>Scalability Architecture</span>
-  </div>
-
-  <!-- IMPACT -->
-  <h2>Impact</h2>
-  <div class="card">
-    <ul>
-      <li>Built high-performance native agents operating under strict CPU and memory budgets</li>
-      <li>Delivered large-scale telemetry pipelines powering real-time observability</li>
-      <li>Designed distributed systems deployed across globally distributed environments</li>
-      <li>Improved reliability and diagnosability of production-critical infrastructure</li>
-      <li>Drove performance optimizations across multi-million endpoint deployments</li>
-    </ul>
-  </div>
-
-  <!-- LEADERSHIP -->
-  <h2>Leadership</h2>
-  <div class="card">
-    <ul>
-      <li>Staff+ technical leadership and architecture ownership</li>
-      <li>Cross-team platform initiatives and long-term strategy</li>
-      <li>Mentoring senior engineers and raising engineering bar</li>
-      <li>Design reviews, deep debugging, and performance tuning</li>
-      <li>Driving engineering excellence across reliability and scalability</li>
-    </ul>
-  </div>
-
-  <!-- STACK -->
-  <h2>Tech Stack</h2>
-  <div class="card badges">
-    <span>C++</span>
-    <span>STL / Boost</span>
-    <span>Python</span>
-    <span>Bash</span>
-    <span>Linux</span>
-    <span>Windows Internals</span>
-    <span>gRPC</span>
-    <span>SQLite</span>
-    <span>Kafka</span>
-    <span>Grafana</span>
-    <span>KQL / ADX</span>
-    <span>Git</span>
-  </div>
-
-   <!-- Contact -->
-    <h2>Contact</h2>
-    <div class="card">
+    <!-- CONTACT -->
+    <div class="section-title">Contact</div>
+    <div class="contact">
       📧 deepanshugargcpp@outlook.com <br/>
+      📱 +91-9819935307 <br/>
       🔗 <a href="https://www.linkedin.com/in/deepanshugarg-cpp" target="_blank">LinkedIn</a><br/>
       💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
     </div>
 
-  <div class="footer">
-    Built for clarity, performance, and signal over noise.
-  </div>
+    <!-- CORE STACK -->
+    <div class="section-title">Core Stack</div>
+    <div class="stack">
+      <span>C++17/20</span>
+      <span>Distributed Systems</span>
+      <span>Linux</span>
+      <span>Windows Internals</span>
+      <span>Multi-threading</span>
+      <span>gRPC</span>
+      <span>SQLite</span>
+      <span>Kafka</span>
+      <span>Grafana</span>
+      <span>KQL / ADX</span>
+      <span>Observability</span>
+      <span>Performance</span>
+    </div>
 
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="content">
+
+    <div class="hero">
+      <h1>Building High-Performance Systems at Scale</h1>
+      <div class="tagline">
+        Native Systems • Endpoint Security • Observability Platforms
+      </div>
+
+      <p class="impact">
+        Staff-level engineer with 15+ years of experience building 
+        high-performance native agents and distributed platforms 
+        deployed across millions of endpoints. Specialized in 
+        low-latency C++ systems, telemetry pipelines, and 
+        planet-scale observability infrastructure.
+      </p>
+
+      <div class="metrics">
+        <div class="metric"><strong>15+</strong>Years</div>
+        <div class="metric"><strong>Millions</strong>Devices</div>
+        <div class="metric"><strong>Staff+</strong>Leadership</div>
+        <div class="metric"><strong>Low-Latency</strong>Systems</div>
+      </div>
+    </div>
+
+    <!-- DOMAINS -->
+    <h2>Focus Areas</h2>
+    <div class="card">
+      • High-performance native agents under strict CPU/memory budgets<br>
+      • Distributed telemetry and observability pipelines<br>
+      • Endpoint security and deep OS integrations<br>
+      • Multi-threaded and lock-free architectures<br>
+      • Large-scale production reliability and diagnostics
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Selected Architecture Work</h2>
+    <div class="card">
+
+      <div class="project">
+        <a href="projects/zscaler-agent.html">
+          Zscaler Native Agent Architecture →
+        </a>
+        <p>
+          Multi-module C++ agent architecture handling telemetry, security enforcement,
+          and policy orchestration across enterprise endpoints.
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="projects/observability-pipeline.html">
+          Planet-Scale Telemetry Pipeline →
+        </a>
+        <p>
+          End-to-end distributed observability pipeline from endpoint ingestion 
+          to real-time analytics and dashboards.
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="projects/update-framework.html">
+          Secure Update Framework →
+        </a>
+        <p>
+          Multi-stage update orchestration with validation, signer verification,
+          and resilience across unreliable networks.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- LEADERSHIP -->
+    <h2>Leadership</h2>
+    <div class="card">
+      • Driving architecture for multi-team platform initiatives<br>
+      • Mentoring senior engineers and influencing org-level direction<br>
+      • Deep debugging and performance war-room ownership<br>
+      • Raising engineering bar through design reviews and standards
+    </div>
+
+  </main>
 </div>
 </body>
 </html>
