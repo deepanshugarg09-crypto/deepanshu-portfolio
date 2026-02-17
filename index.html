@@ -1,182 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deepanshu Garg | Senior Staff Software Engineer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Deepanshu Garg | Staff+ Engineer</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
+<style>
+:root {
+  --bg: #0b0f19;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #60a5fa;
+  --border: #1f2937;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 5px;
-      color: #f9fafb;
-    }
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: 48px 24px;
+}
 
-    h2 {
-      margin-top: 40px;
-      color: #93c5fd;
-      border-bottom: 1px solid #1f2937;
-      padding-bottom: 5px;
-    }
+h1 {
+  font-size: 2.6rem;
+  margin: 0;
+}
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #9ca3af;
-      margin-bottom: 20px;
-    }
+h2 {
+  margin-top: 50px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
 
-    .highlight {
-      color: #60a5fa;
-      font-weight: 600;
-    }
+.subtitle {
+  color: var(--muted);
+  margin-top: 6px;
+}
 
-    .card {
-      background: #020617;
-      border: 1px solid #1f2937;
-      padding: 18px;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
+.hero {
+  margin-bottom: 30px;
+}
 
-    ul {
-      padding-left: 20px;
-    }
+.impact {
+  font-size: 1.05rem;
+  margin-top: 20px;
+  color: #cbd5f5;
+}
 
-    a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.badges span {
+  display: inline-block;
+  background: #1f2937;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 4px;
+  font-size: 0.85rem;
+}
 
-    .tech-badges span {
-      display: inline-block;
-      background: #1f2937;
-      padding: 6px 10px;
-      border-radius: 6px;
-      margin: 4px;
-      font-size: 0.85rem;
-    }
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
 
-    .footer {
-      margin-top: 50px;
-      padding-top: 20px;
-      border-top: 1px solid #1f2937;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
+.metric {
+  background: #020617;
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+}
 
-    .download-btn {
-      display: inline-block;
-      background: #2563eb;
-      padding: 10px 16px;
-      border-radius: 8px;
-      color: white;
-      font-weight: 600;
-      margin-top: 10px;
-    }
+.metric strong {
+  font-size: 1.4rem;
+  color: white;
+  display: block;
+}
 
-    .download-btn:hover {
-      background: #1d4ed8;
-    }
-  </style>
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.download {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.download:hover {
+  background: #1d4ed8;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
     <h1>Deepanshu Garg</h1>
-    <div class="subtitle">Senior Staff Software Engineer</div>
+    <div class="subtitle">Senior Staff Software Engineer • Systems & Distributed Platforms</div>
 
-    <p>
-      Senior engineering leader with <span class="highlight">15+ years of experience</span> building
-      high-performance systems in <span class="highlight">C++</span>, distributed platforms,
-      endpoint security, and large-scale observability solutions.
+    <p class="impact">
+      I build <strong>high-performance native systems</strong> and <strong>planet-scale infrastructure</strong>
+      across endpoint security, distributed telemetry, and observability platforms.
+      15+ years shipping production-critical software used across millions of devices.
     </p>
 
-    <p>
-      Proven track record of delivering <span class="highlight">production-scale infrastructure</span>,
-      mentoring engineers, and driving architectural decisions across
-      <span class="highlight">security agents, telemetry pipelines, and cloud-native platforms</span>.
-    </p>
-
-    <a href="Deepanshu_Garg_Resume.pdf" download="Deepanshu_Garg_SeniorStaffEngineer.pdf" class="download-btn">
-      ⬇ Download Resume
+    <a href="Deepanshu_Garg_Resume.pdf"
+       download="Deepanshu_Garg_Staff_Engineer.pdf"
+       class="download">
+       ⬇ Download Resume
     </a>
 
-    <!-- Core Expertise -->
-    <h2>Core Expertise</h2>
-    <div class="card tech-badges">
-      <span>C++ (Modern / Systems)</span>
-      <span>Distributed Systems</span>
-      <span>Endpoint Security</span>
-      <span>Observability Platforms</span>
-      <span>Performance Engineering</span>
-      <span>Multi-threading</span>
-      <span>IPC & OS Internals</span>
-      <span>Linux / Windows Systems</span>
-      <span>Telemetry Pipelines</span>
-      <span>Scalability Architecture</span>
-      <span>Memory Optimization</span>
-      <span>Low Latency Design</span>
+    <!-- Credibility metrics -->
+    <div class="metrics">
+      <div class="metric">
+        <strong>15+</strong>
+        Years Experience
+      </div>
+      <div class="metric">
+        <strong>Millions</strong>
+        Devices Impacted
+      </div>
+      <div class="metric">
+        <strong>C++</strong>
+        Systems Expertise
+      </div>
+      <div class="metric">
+        <strong>Staff+</strong>
+        Technical Leadership
+      </div>
     </div>
+  </div>
 
-    <!-- What I Do -->
-    <h2>What I Build</h2>
-    <div class="card">
-      <ul>
-        <li>High-performance native agents with strict memory and CPU constraints</li>
-        <li>Security and telemetry platforms deployed across millions of endpoints</li>
-        <li>Real-time data pipelines for large-scale observability</li>
-        <li>Low-latency IPC frameworks and system-level integrations</li>
-        <li>Highly scalable backend services and diagnostics tooling</li>
-      </ul>
-    </div>
+  <!-- EXPERTISE -->
+  <h2>Core Expertise</h2>
+  <div class="card badges">
+    <span>Modern C++ (C++17/20)</span>
+    <span>Distributed Systems</span>
+    <span>Endpoint Security</span>
+    <span>Observability Platforms</span>
+    <span>Performance Engineering</span>
+    <span>Multi-threaded Systems</span>
+    <span>IPC & OS Internals</span>
+    <span>Low Latency Design</span>
+    <span>Memory Optimization</span>
+    <span>Native Agents</span>
+    <span>Telemetry Pipelines</span>
+    <span>Scalability Architecture</span>
+  </div>
 
-    <!-- Leadership -->
-    <h2>Leadership</h2>
-    <div class="card">
-      <ul>
-        <li>Staff+ technical leadership and architecture ownership</li>
-        <li>Driving cross-team initiatives and platform strategy</li>
-        <li>Mentoring senior engineers and influencing engineering culture</li>
-        <li>Design reviews, performance tuning, and production hardening</li>
-      </ul>
-    </div>
+  <!-- IMPACT -->
+  <h2>Impact</h2>
+  <div class="card">
+    <ul>
+      <li>Built high-performance native agents operating under strict CPU and memory budgets</li>
+      <li>Delivered large-scale telemetry pipelines powering real-time observability</li>
+      <li>Designed distributed systems deployed across globally distributed environments</li>
+      <li>Improved reliability and diagnosability of production-critical infrastructure</li>
+      <li>Drove performance optimizations across multi-million endpoint deployments</li>
+    </ul>
+  </div>
 
-    <!-- Tech Stack -->
-    <h2>Tech Stack</h2>
-    <div class="card tech-badges">
-      <span>C++17/20</span>
-      <span>STL / Boost</span>
-      <span>Python</span>
-      <span>Bash</span>
-      <span>Linux</span>
-      <span>Windows Internals</span>
-      <span>gRPC</span>
-      <span>SQLite</span>
-      <span>Kafka</span>
-      <span>Grafana</span>
-      <span>KQL / ADX</span>
-      <span>Git</span>
-    </div>
+  <!-- LEADERSHIP -->
+  <h2>Leadership</h2>
+  <div class="card">
+    <ul>
+      <li>Staff+ technical leadership and architecture ownership</li>
+      <li>Cross-team platform initiatives and long-term strategy</li>
+      <li>Mentoring senior engineers and raising engineering bar</li>
+      <li>Design reviews, deep debugging, and performance tuning</li>
+      <li>Driving engineering excellence across reliability and scalability</li>
+    </ul>
+  </div>
 
-    <!-- Contact -->
+  <!-- STACK -->
+  <h2>Tech Stack</h2>
+  <div class="card badges">
+    <span>C++</span>
+    <span>STL / Boost</span>
+    <span>Python</span>
+    <span>Bash</span>
+    <span>Linux</span>
+    <span>Windows Internals</span>
+    <span>gRPC</span>
+    <span>SQLite</span>
+    <span>Kafka</span>
+    <span>Grafana</span>
+    <span>KQL / ADX</span>
+    <span>Git</span>
+  </div>
+
+   <!-- Contact -->
     <h2>Contact</h2>
     <div class="card">
       📧 deepanshugargcpp@outlook.com <br/>
@@ -184,9 +231,10 @@
       💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
     </div>
 
-    <div class="footer">
-      © 2026 Deepanshu Garg — Built with simplicity and performance in mind.
-    </div>
+  <div class="footer">
+    Built for clarity, performance, and signal over noise.
   </div>
+
+</div>
 </body>
 </html>
