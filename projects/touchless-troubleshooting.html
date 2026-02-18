@@ -66,14 +66,19 @@ upload it for Zscaler support to review without customer involvement.
 <img src="touchlesstroubleshooting.png" alt="Telemetry Architecture">
 
 <h2>Architectural Description</h2>
-<p>
-Singleton + Worker Thread — RequestManager is a singleton with a dedicated background thread consuming from a thread-safe queue, decoupling request submission from processing.
-Strategy Pattern (Auth) — StatusReporter has two concrete strategies (ModernAuthReporter, LegacyAuthReporter) selected at runtime based on a feature flag.
-Pipeline Pattern — PipelineRegistry owns an ordered list of IPipelineStage implementations. Stages are executed sequentially; each stage can halt the pipeline via canProceedToNext.
-Dependency Inversion — The core library depends on callbacks (std::function) injected by PlatformAdapter, not on concrete platform types. This enables cross-platform reuse.
-TTL Deduplication Cache — Prevents re-processing of the same job within its validity window.
-Completion Wait (Packet Capture) — After the NetworkCapture stage, the registry spawns two parallel threads to race between a "stop" event and a "completion" event, with a configurable timeout.
-</p>
+<ul style="line-height:1.7; padding-left:18px;">
+  <li><b>Singleton + Worker Thread</b> — <i>RequestManager</i> is a singleton with a dedicated background thread consuming from a thread-safe queue, decoupling request submission from processing.</li>
+
+  <li><b>Strategy Pattern (Auth)</b> — <i>StatusReporter</i> uses two concrete strategies (<i>ModernAuthReporter</i>, <i>LegacyAuthReporter</i>) selected at runtime via feature flag.</li>
+
+  <li><b>Pipeline Pattern</b> — <i>PipelineRegistry</i> maintains an ordered list of <i>IPipelineStage</i> implementations executed sequentially; stages can short-circuit execution using <i>canProceedToNext</i>.</li>
+
+  <li><b>Dependency Inversion</b> — Core library depends on injected callbacks (<i>std::function</i>) from <i>PlatformAdapter</i> instead of platform-specific types, enabling cross-platform reuse.</li>
+
+  <li><b>TTL Deduplication Cache</b> — Prevents re-processing of identical jobs within their validity window to reduce redundant work.</li>
+
+  <li><b>Completion Wait (Packet Capture)</b> — After the <i>NetworkCapture</i> stage, two parallel threads race between a <i>stop</i> event and a <i>completion</i> event with configurable timeout handling.</li>
+</ul>
 </div>
 
 </div>
