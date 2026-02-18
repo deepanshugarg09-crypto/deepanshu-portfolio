@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Endpoint Telemetry Platform | Deepanshu Garg</title>
+<title>Annotate Telemetry Events | Deepanshu Garg</title>
 
 <style>
 body{
@@ -50,34 +50,26 @@ img{
 
 <a class="back" href="../index.html">← Back to Portfolio</a>
 
-<h1>Endpoint Telemetry Platform</h1>
+<h1>Annotate Telemetry Events</h1>
 
 <div class="card">
 <h2>What this solution does</h2>
 <p>
-Designed and built a high-scale telemetry ingestion platform that collects,
-processes, and visualizes endpoint health and behavioral signals across
-millions of devices. The platform enables real-time observability,
-troubleshooting, and proactive reliability improvements.
+We have telemetry events raised by different windows services from millions of devices which we use to analyze the behaviour of our product and improve as and when a trend shows anomoly.
+Now there are certain noisy events which gets raised for obvious reasons like network is down, network is flapping, system is modern stand by. We wanted to filter such a noisy events 
+and by knowing the system state at the time when telemetry event was raised. That where this requirement came up and we built this system
 </p>
 
 <h2>Architecture Diagram</h2>
-<img src="images/telemetry-arch.png" alt="Telemetry Architecture">
+<img src="annotateevents.png" alt="Annotate Telemetry Events">
 
 <h2>Architectural Description</h2>
 <p>
-The system follows a distributed ingestion model where endpoint agents
-stream structured telemetry to ingestion gateways. These gateways perform
-schema validation and batching before routing data into a streaming backbone.
-Downstream processors enrich events with metadata and forward them into
-columnar analytics stores optimized for time-series queries.
-</p>
-
-<p>
-Visualization layers integrate with observability tooling to enable
-fleet-wide diagnostics, anomaly detection, and customer-impact reduction.
-The design prioritizes low-latency ingestion, horizontal scalability,
-and schema evolution without breaking backward compatibility.
+Singleton state tracking engine — monitors OS-level environment changes (network, sleep/power, user sessions) via platform-specific monitors
+Thread-safe event ingestion — state change events flow through a concurrent queue to a dedicated worker thread, decoupling producers from persistence
+SQLite-backed persistence — events are stored locally with auto-purge (max 20K rows, cleanup every 2K insertions) to bound disk usage
+Query processor — external consumers ask "what was the system state at time T?" and get back annotated responses (network/sleep/session state + transitioning flag)
+Cloud-gated activation — the library only activates when both diagnostics and event annotation feature flags are enabled via cloud policy
 </p>
 </div>
 
