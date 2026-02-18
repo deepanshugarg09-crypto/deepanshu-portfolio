@@ -90,24 +90,48 @@ body {
 
 /* RIGHT SIDE */
 .content {
-  padding: 40px 48px;
-  max-width: 900px;
+  padding: 44px 56px;
+  max-width: 920px;
+}
+
+/* HERO */
+.hero {
+  max-width: 760px;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 2.3rem;
+  font-size: 2.4rem;
+  letter-spacing: -0.4px;
 }
 
 .tagline {
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: 8px;
+  font-size: 1rem;
 }
 
+/* PREMIUM BULLETS */
 .impact {
-  margin-top: 18px;
-  font-size: 1.05rem;
+  margin-top: 22px;
+  padding-left: 0;
+}
+
+.impact li {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 11px;
   color: #cbd5f5;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.impact .icon {
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 4px;
 }
 
 /* Cards */
@@ -121,15 +145,15 @@ body {
 
 h2 {
   color: var(--accent);
-  font-size: 1.1rem;
-  margin: 26px 0 10px;
+  font-size: 1.15rem;
+  margin: 30px 0 12px;
 }
 
 /* Metrics */
 .metrics {
   display: flex;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .metric {
@@ -159,10 +183,9 @@ h2 {
 
 .project p {
   margin: 4px 0 0;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--muted);
 }
-
 </style>
 </head>
 
@@ -180,7 +203,6 @@ h2 {
        ⬇ Download Resume
     </a>
 
-    <!-- CONTACT -->
     <div class="section-title">Contact</div>
     <div class="contact">
       📧 deepanshugargcpp@outlook.com <br/>
@@ -189,7 +211,6 @@ h2 {
       💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
     </div>
 
-    <!-- CORE STACK -->
     <div class="section-title">Core Stack</div>
     <div class="stack">
       <span>C++17/20</span>
@@ -202,12 +223,10 @@ h2 {
       <span>Grafana</span>
       <span>KQL / ADX</span>
     </div>
-
   </aside>
 
   <!-- RIGHT CONTENT -->
   <main class="content">
-
     <div class="hero">
       <h1>Building High-Performance Systems at Scale</h1>
       <div class="tagline">
@@ -215,17 +234,16 @@ h2 {
       </div>
 
       <ul class="impact">
-        <li><span class="icon">◆</span>Senior Staff-level engineer with 15+ years of experience in modern C++ across application development, product engineering, and system-level programming.</li>
-        <li><span class="icon">◆</span>Expertise in building high-performance, scalable, cross-platform software with strong focus on Windows internals and system integration.</li>
-        <li><span class="icon">◆</span>Deep experience in multithreading, STL, performance optimization, and endpoint security systems.</li>
-        <li><span class="icon">◆</span>Built telemetry-driven platforms and data-intensive solutions for large-scale environments.</li>
-        <li><span class="icon">◆</span>Hands-on experience integrating AI-driven components such as NER-based redaction and large-scale entity extraction.</li>
-        <li><span class="icon">◆</span>Actively leverage AI tools for code generation, debugging, design exploration, and developer productivity.</li>
-        <li><span class="icon">◆</span>Provide technical leadership through mentoring, code reviews, and driving engineering excellence in Agile teams.</li>
-        <li><span class="icon">◆</span>Additional hands-on experience with Python, C#, databases, and cloud fundamentals.</li>
-        <li><span class="icon">◆</span>AWS Certified Cloud Practitioner.</li>
+        <li><span class="icon">✓</span>Senior Staff-level engineer with 15+ years of experience in modern C++ across application development, product engineering, and system-level programming.</li>
+        <li><span class="icon">✓</span>Expertise in building high-performance, scalable, cross-platform software with strong focus on Windows internals and system integration.</li>
+        <li><span class="icon">✓</span>Deep experience in multithreading, STL, performance optimization, and endpoint security systems.</li>
+        <li><span class="icon">✓</span>Built telemetry-driven platforms and data-intensive solutions for large-scale environments.</li>
+        <li><span class="icon">✓</span>Hands-on experience integrating AI-driven components such as NER-based redaction and large-scale entity extraction.</li>
+        <li><span class="icon">✓</span>Actively leverage AI tools for code generation, debugging, design exploration, and developer productivity.</li>
+        <li><span class="icon">✓</span>Provide technical leadership through mentoring, code reviews, and driving engineering excellence in Agile teams.</li>
+        <li><span class="icon">✓</span>Additional hands-on experience with Python, C#, databases, and cloud fundamentals.</li>
+        <li><span class="icon">✓</span>AWS Certified Cloud Practitioner.</li>
       </ul>
-
 
       <div class="metrics">
         <div class="metric"><strong>15+</strong>Years</div>
@@ -235,54 +253,34 @@ h2 {
       </div>
     </div>
 
-    <!-- DOMAINS -->
     <h2>Focus Areas</h2>
     <div class="card">
-        • High-performance native agents under strict CPU/memory constraints<br>
-        • Endpoint security platforms with deep OS and network integrations<br>
-        • Distributed telemetry, observability, and diagnostics pipelines<br>
-        • Multi-threaded, lock-free, and performance-critical architectures<br>
-        • Large-scale production reliability and automated troubleshooting<br>
-        • Windows internals, system programming, and low-level debugging
+      • High-performance native agents under strict CPU/memory constraints<br>
+      • Endpoint security platforms with deep OS and network integrations<br>
+      • Distributed telemetry, observability, and diagnostics pipelines<br>
+      • Multi-threaded, lock-free, and performance-critical architectures<br>
+      • Large-scale production reliability and automated troubleshooting<br>
+      • Windows internals, system programming, and low-level debugging
     </div>
 
-    <!-- PROJECTS -->
     <h2>Selected Architecture Work</h2>
     <div class="card">
-
       <div class="project">
-        <a href="projects/zscaler-agent.html">
-          Zscaler Native Agent Architecture →
-        </a>
-        <p>
-          Multi-module C++ agent architecture handling telemetry, security enforcement,
-          and policy orchestration across enterprise endpoints.
-        </p>
+        <a href="projects/zscaler-agent.html">Zscaler Native Agent Architecture →</a>
+        <p>Multi-module C++ agent architecture handling telemetry, security enforcement, and policy orchestration across enterprise endpoints.</p>
       </div>
 
       <div class="project">
-        <a href="projects/observability-pipeline.html">
-          Planet-Scale Telemetry Pipeline →
-        </a>
-        <p>
-          End-to-end distributed observability pipeline from endpoint ingestion 
-          to real-time analytics and dashboards.
-        </p>
+        <a href="projects/observability-pipeline.html">Planet-Scale Telemetry Pipeline →</a>
+        <p>End-to-end distributed observability pipeline from endpoint ingestion to real-time analytics and dashboards.</p>
       </div>
 
       <div class="project">
-        <a href="projects/update-framework.html">
-          Secure Update Framework →
-        </a>
-        <p>
-          Multi-stage update orchestration with validation, signer verification,
-          and resilience across unreliable networks.
-        </p>
+        <a href="projects/update-framework.html">Secure Update Framework →</a>
+        <p>Multi-stage update orchestration with validation, signer verification, and resilience across unreliable networks.</p>
       </div>
-
     </div>
 
-    <!-- LEADERSHIP -->
     <h2>Leadership</h2>
     <div class="card">
       • Driving architecture for multi-team platform initiatives<br>
@@ -290,7 +288,6 @@ h2 {
       • Deep debugging and performance war-room ownership<br>
       • Raising engineering bar through design reviews and standards
     </div>
-
   </main>
 </div>
 </body>
