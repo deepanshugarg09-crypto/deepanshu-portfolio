@@ -28,7 +28,7 @@ body {
 /* Layout */
 .wrapper {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 300px 1fr; /* slightly slimmer sidebar */
   min-height: 100vh;
 }
 
@@ -36,21 +36,23 @@ body {
 .sidebar {
   background: var(--panel);
   border-right: 1px solid var(--border);
-  padding: 28px 22px;
+  padding: 22px 16px;          /* compact */
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow-y: auto;            /* allow scrolling */
+  scrollbar-width: thin;
 }
 
 .name {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
 .role {
   color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 16px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
 }
 
 .download {
@@ -58,50 +60,54 @@ body {
   background: #2563eb;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 9px;
   border-radius: 8px;
   font-weight: 600;
-  margin: 16px 0;
+  margin: 14px 0;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .section-title {
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 22px;
-  margin-bottom: 6px;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.contact {
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .contact a {
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.9rem;
 }
 
+/* Compact chips */
 .stack span {
   display: inline-block;
   background: #1f2937;
-  padding: 5px 8px;
-  border-radius: 6px;
-  margin: 4px 4px 0 0;
-  font-size: 0.75rem;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin: 3px 3px 0 0;
+  font-size: 0.70rem;
+  line-height: 1.2;
 }
 
 /* RIGHT SIDE */
 .content {
-  padding: 44px 56px;
-  max-width: 920px;
+  padding: 42px 48px;
+  width: 100%;
+  max-width: none;   /* 🔥 removes empty space */
 }
 
 /* HERO */
-.hero {
-  max-width: 100%;
-}
-
 .hero h1 {
   margin: 0;
-  font-size: 2.4rem;
+  font-size: 2.35rem;
   letter-spacing: -0.4px;
 }
 
@@ -111,7 +117,7 @@ body {
   font-size: 1rem;
 }
 
-/* PREMIUM BULLETS */
+/* BULLETS */
 .impact {
   margin-top: 22px;
   padding-left: 0;
@@ -122,16 +128,17 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   color: #cbd5f5;
-  line-height: 1.65;
-  font-size: 1.05rem;
+  line-height: 1.6;
+  font-size: 1.02rem;
+  max-width: 100%;
 }
 
 .impact .icon {
   color: var(--accent);
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 /* Cards */
@@ -140,20 +147,21 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 18px;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 h2 {
   color: var(--accent);
   font-size: 1.15rem;
-  margin: 30px 0 12px;
+  margin: 28px 0 10px;
 }
 
 /* Metrics */
 .metrics {
   display: flex;
   gap: 14px;
-  margin-top: 22px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .metric {
@@ -167,7 +175,7 @@ h2 {
 
 .metric strong {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 /* Projects */
@@ -212,68 +220,62 @@ h2 {
     </div>
 
     <!-- LANGUAGES -->
-      <div class="section-title">Languages</div>
-      <div class="stack">
-        <span>C++ (98/11/14/17)</span>
-        <span>Python</span>
-        <span>C#</span>
-      </div>
-      
-      <!-- DATABASES -->
-      <div class="section-title">Databases</div>
-      <div class="stack">
-        <span>SQL Server</span>
-        <span>Oracle</span>
-        <span>SQLite</span>
-      </div>
-      
-      <!-- TELEMETRY & OBSERVABILITY -->
-      <div class="section-title">Telemetry & Observability</div>
-      <div class="stack">
-        <span>Grafana</span>
-        <span>KQL</span>
-        <span>Azure Data Explorer (ADX)</span>
-        <span>Telemetry Design</span>
-        <span>Diagnostics Pipelines</span>
-      </div>
-      
-      <!-- TOOLS -->
-      <div class="section-title">Tools</div>
-      <div class="stack">
-        <span>Git</span>
-        <span>Bitbucket</span>
-        <span>GitLab</span>
-        <span>JIRA</span>
-        <span>Dependency Walker</span>
-        <span>Sysinternals Suite</span>
-        <span>WinDbg</span>
-        <span>ProcMon</span>
-        <span>Wireshark</span>
-      </div>
-      
-      <!-- TESTING -->
-      <div class="section-title">Testing</div>
-      <div class="stack">
-        <span>Google Test (gTest)</span>
-        <span>Unit Testing</span>
-        <span>Integration Testing</span>
-      </div>
-      
-      <!-- TECHNOLOGIES -->
-      <div class="section-title">Technologies</div>
-      <div class="stack">
-        <span>Win32 APIs</span>
-        <span>Windows Internals</span>
-        <span>Multi-threading</span>
-        <span>STL</span>
-        <span>Client-Server Architecture</span>
-        <span>REST APIs</span>
-        <span>gRPC</span>
-        <span>IPC</span>
-        <span>Endpoint Security</span>
-        <span>PCAP / Network Diagnostics</span>
-      </div>
+    <div class="section-title">Languages</div>
+    <div class="stack">
+      <span>C++ (98/11/14/17)</span>
+      <span>Python</span>
+      <span>C#</span>
+    </div>
 
+    <div class="section-title">Databases</div>
+    <div class="stack">
+      <span>SQL Server</span>
+      <span>Oracle</span>
+      <span>SQLite</span>
+    </div>
+
+    <div class="section-title">Telemetry & Observability</div>
+    <div class="stack">
+      <span>Grafana</span>
+      <span>KQL</span>
+      <span>Azure Data Explorer (ADX)</span>
+      <span>Telemetry Design</span>
+      <span>Diagnostics Pipelines</span>
+    </div>
+
+    <div class="section-title">Tools</div>
+    <div class="stack">
+      <span>Git</span>
+      <span>Bitbucket</span>
+      <span>GitLab</span>
+      <span>JIRA</span>
+      <span>Dependency Walker</span>
+      <span>Sysinternals Suite</span>
+      <span>WinDbg</span>
+      <span>ProcMon</span>
+      <span>Wireshark</span>
+    </div>
+
+    <div class="section-title">Testing</div>
+    <div class="stack">
+      <span>Google Test (gTest)</span>
+      <span>Unit Testing</span>
+      <span>Integration Testing</span>
+    </div>
+
+    <div class="section-title">Technologies</div>
+    <div class="stack">
+      <span>Win32 APIs</span>
+      <span>Windows Internals</span>
+      <span>Multi-threading</span>
+      <span>STL</span>
+      <span>Client-Server Architecture</span>
+      <span>REST APIs</span>
+      <span>gRPC</span>
+      <span>IPC</span>
+      <span>Endpoint Security</span>
+      <span>PCAP / Network Diagnostics</span>
+    </div>
   </aside>
 
   <!-- RIGHT CONTENT -->
