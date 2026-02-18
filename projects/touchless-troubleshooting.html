@@ -6,41 +6,160 @@
 <title>Touchless Troubleshooting | Deepanshu Garg</title>
 
 <style>
+:root{
+  --bg:#0b0f19;
+  --card:#111827;
+  --border:#1f2937;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#60a5fa;
+  --accent-soft:#1e3a8a;
+  --success:#22c55e;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:Inter,system-ui;
-  background:#0b0f19;
-  color:#e5e7eb;
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  background:linear-gradient(180deg,#0b0f19,#05070d);
+  color:var(--text);
+  line-height:1.6;
 }
 
+/* Layout */
 .container{
-  max-width:900px;
+  max-width:950px;
   margin:auto;
-  padding:40px 20px;
+  padding:48px 20px 60px;
 }
 
-h1{margin-bottom:10px;}
-h2{color:#60a5fa;margin-top:30px;}
-
+/* Back link */
 .back{
-  color:#60a5fa;
+  color:var(--accent);
   text-decoration:none;
+  font-size:14px;
   display:inline-block;
-  margin-bottom:20px;
+  margin-bottom:24px;
+  opacity:.85;
+}
+.back:hover{opacity:1}
+
+/* Title */
+h1{
+  font-size:34px;
+  margin:0 0 8px;
+  letter-spacing:-0.3px;
+}
+
+.subtitle{
+  color:var(--muted);
+  margin-bottom:22px;
+  font-size:15px;
+}
+
+/* Scale Callout */
+.scale{
+  background:linear-gradient(135deg,#0b1226,#020617);
+  border:1px solid var(--accent-soft);
+  padding:16px 18px;
+  border-radius:12px;
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.scale-badge{
+  background:rgba(96,165,250,.15);
+  color:var(--accent);
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:13px;
+}
+
+.scale p{
+  margin:0;
+  font-size:14px;
+  color:#dbeafe;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  padding:26px 24px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+
+/* Section headings */
+h2{
+  color:var(--accent);
+  margin-top:26px;
+  margin-bottom:10px;
+  font-size:20px;
+  letter-spacing:.2px;
+}
+
+/* Architecture Tags */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0 18px;
+}
+
+.tag{
+  font-size:12px;
+  background:#020617;
+  border:1px solid var(--border);
+  color:#cbd5f5;
+  padding:5px 9px;
+  border-radius:999px;
+  letter-spacing:.3px;
+}
+
+/* Paragraph polish */
+p{
+  color:#d1d5db;
+  margin:8px 0 14px;
+}
+
+/* List */
+ul{
+  padding-left:18px;
+  line-height:1.7;
+}
+
+li{
+  margin-bottom:8px;
+}
+
+/* Diagram */
+.diagram{
+  background:#020617;
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:12px;
+  margin-top:14px;
 }
 
 img{
-  max-width:100%;
-  border-radius:10px;
-  margin-top:15px;
-  border:1px solid #1f2937;
+  width:100%;
+  border-radius:8px;
 }
 
-.card{
-  background:#111827;
-  padding:20px;
-  border-radius:12px;
-  border:1px solid #1f2937;
+/* Pattern highlight */
+b{
+  color:#f9fafb;
+}
+
+/* Responsive */
+@media (max-width:640px){
+  h1{font-size:28px}
+  .scale{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -51,8 +170,16 @@ img{
 <a class="back" href="../index.html">← Back to Portfolio</a>
 
 <h1>Touchless Troubleshooting</h1>
+<div class="subtitle">Zero-touch remote diagnostics platform for proactive issue resolution</div>
+
+<!-- Scale Callout -->
+<div class="scale">
+  <div class="scale-badge">Scale</div>
+  <p>Designed for remote log collection across <b>50M+ devices</b> with zero customer interaction.</p>
+</div>
 
 <div class="card">
+
 <h2>What this solution does</h2>
 <p>
 Client logs are our first need to debug an issue and we really can not reach out to customer every time for logs.
@@ -63,10 +190,23 @@ upload it for Zscaler support to review without customer involvement.
 </p>
 
 <h2>Architecture Diagram</h2>
-<img src="touchlesstroubleshooting.png" alt="Telemetry Architecture">
+<div class="diagram">
+  <img src="touchlesstroubleshooting.png" alt="Telemetry Architecture">
+</div>
 
 <h2>Architectural Description</h2>
-<ul style="line-height:1.7; padding-left:18px;">
+
+<!-- Architecture Tags -->
+<div class="tags">
+  <div class="tag">Singleton</div>
+  <div class="tag">Strategy Pattern</div>
+  <div class="tag">Pipeline Architecture</div>
+  <div class="tag">Dependency Inversion</div>
+  <div class="tag">Async Processing</div>
+  <div class="tag">Deduplication Cache</div>
+</div>
+
+<ul>
   <li><b>Singleton + Worker Thread</b> — <i>RequestManager</i> is a singleton with a dedicated background thread consuming from a thread-safe queue, decoupling request submission from processing.</li>
 
   <li><b>Strategy Pattern (Auth)</b> — <i>StatusReporter</i> uses two concrete strategies (<i>ModernAuthReporter</i>, <i>LegacyAuthReporter</i>) selected at runtime via feature flag.</li>
@@ -79,8 +219,8 @@ upload it for Zscaler support to review without customer involvement.
 
   <li><b>Completion Wait (Packet Capture)</b> — After the <i>NetworkCapture</i> stage, two parallel threads race between a <i>stop</i> event and a <i>completion</i> event with configurable timeout handling.</li>
 </ul>
-</div>
 
+</div>
 </div>
 </body>
 </html>
