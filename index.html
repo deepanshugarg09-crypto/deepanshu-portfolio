@@ -20,7 +20,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -28,116 +28,129 @@ body {
 /* Layout */
 .wrapper {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  height: 100vh;
-  overflow: hidden;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
 }
 
 /* LEFT PANEL */
 .sidebar {
   background: var(--panel);
   border-right: 1px solid var(--border);
-  padding: 18px;
-  font-size: 13px;
+  padding: 28px 22px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
-.name { font-size: 1.2rem; font-weight: 700; }
-.role { color: var(--muted); margin-bottom: 10px; }
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
 
 .download {
   display: block;
   background: #2563eb;
   color: white;
   text-align: center;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 8px;
   font-weight: 600;
-  margin: 12px 0;
+  margin: 16px 0;
   text-decoration: none;
 }
 
 .section-title {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 14px;
+  margin-top: 22px;
+  margin-bottom: 6px;
 }
 
-.contact a { color: var(--accent); text-decoration: none; }
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
 
 .stack span {
   display: inline-block;
   background: #1f2937;
-  padding: 4px 6px;
-  border-radius: 5px;
-  margin: 3px;
-  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 4px 4px 0 0;
+  font-size: 0.75rem;
 }
 
 /* RIGHT SIDE */
 .content {
-  padding: 30px 40px;
+  padding: 40px 48px;
+  max-width: 900px;
 }
 
-/* HERO */
 .hero h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .tagline {
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-/* BULLET INTRO */
-.impact-list {
-  margin-top: 14px;
-  padding-left: 18px;
-  font-size: 14px;
-  line-height: 1.6;
+.impact {
+  margin-top: 18px;
+  font-size: 1.05rem;
   color: #cbd5f5;
-}
-
-.impact-list li {
-  margin-bottom: 6px;
 }
 
 /* Cards */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px;
-  margin-top: 16px;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 18px;
 }
 
 h2 {
   color: var(--accent);
-  font-size: 1rem;
-  margin-top: 20px;
+  font-size: 1.1rem;
+  margin: 26px 0 10px;
 }
 
 /* Metrics */
 .metrics {
   display: flex;
-  gap: 12px;
-  margin-top: 12px;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .metric {
   background: #020617;
   border: 1px solid var(--border);
-  padding: 8px;
-  border-radius: 8px;
-  min-width: 90px;
+  padding: 12px;
+  border-radius: 10px;
+  min-width: 110px;
   text-align: center;
-  font-size: 12px;
 }
 
-.metric strong { display: block; font-size: 1rem; }
+.metric strong {
+  display: block;
+  font-size: 1.2rem;
+}
 
 /* Projects */
+.project {
+  margin-bottom: 14px;
+}
+
 .project a {
   color: var(--accent);
   font-weight: 600;
@@ -146,9 +159,10 @@ h2 {
 
 .project p {
   margin: 4px 0 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
+
 </style>
 </head>
 
@@ -160,28 +174,84 @@ h2 {
     <div class="name">Deepanshu Garg</div>
     <div class="role">Senior Staff Software Engineer</div>
 
-    <a href="Deepanshu_Garg_Resume.pdf" download class="download">⬇ Resume</a>
+    <a href="Deepanshu_Garg_Resume.pdf"
+       download="Deepanshu_Garg_Senior_Staff_Engineer.pdf"
+       class="download">
+       ⬇ Download Resume
+    </a>
 
+    <!-- CONTACT -->
     <div class="section-title">Contact</div>
-    📧 deepanshugargcpp@outlook.com<br>
-    📱 +91-9819935307<br>
-    🔗 <a href="https://www.linkedin.com/in/deepanshugarg-cpp" target="_blank">LinkedIn</a><br>
-    💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
-
-    <div class="section-title">Highlights</div>
-    • 15+ years modern C++<br>
-    • Millions of endpoints shipped<br>
-    • Windows internals expertise<br>
-    • Observability platforms<br>
-    • Staff+ architecture leadership
-
-    <div class="section-title">Core Stack</div>
-    <div class="stack">
-      <span>C++</span><span>Win32</span><span>Multithreading</span>
-      <span>Telemetry</span><span>ADX</span><span>KQL</span>
-      <span>Grafana</span><span>SQLite</span><span>gRPC</span>
-      <span>Diagnostics</span><span>Security</span>
+    <div class="contact">
+      📧 deepanshugargcpp@outlook.com <br/>
+      📱 +91-9819935307 <br/>
+      🔗 <a href="https://www.linkedin.com/in/deepanshugarg-cpp" target="_blank">LinkedIn</a><br/>
+      💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
     </div>
+
+    <!-- LANGUAGES -->
+  <div class="section-title">Languages</div>
+  <div class="stack">
+    <span>C++ (98/11/14/17)</span>
+    <span>Python</span>
+    <span>C#</span>
+  </div>
+  
+  <!-- DATABASES -->
+  <div class="section-title">Databases</div>
+  <div class="stack">
+    <span>SQL Server</span>
+    <span>Oracle</span>
+    <span>SQLite</span>
+  </div>
+  
+  <!-- TELEMETRY & OBSERVABILITY -->
+  <div class="section-title">Telemetry & Observability</div>
+  <div class="stack">
+    <span>Grafana</span>
+    <span>KQL</span>
+    <span>Azure Data Explorer (ADX)</span>
+    <span>Telemetry Design</span>
+    <span>Diagnostics Pipelines</span>
+  </div>
+  
+  <!-- TOOLS -->
+  <div class="section-title">Tools</div>
+  <div class="stack">
+    <span>Git</span>
+    <span>Bitbucket</span>
+    <span>GitLab</span>
+    <span>JIRA</span>
+    <span>Dependency Walker</span>
+    <span>Sysinternals Suite</span>
+    <span>Visual Studio 2022</span>
+    <span>ProcMon</span>
+    <span>Wireshark</span>
+  </div>
+  
+  <!-- TESTING -->
+  <div class="section-title">Testing</div>
+  <div class="stack">
+    <span>Google Test (gTest)</span>
+    <span>Unit Testing</span>
+    <span>Integration Testing</span>
+  </div>
+  
+  <!-- TECHNOLOGIES -->
+  <div class="section-title">Technologies</div>
+  <div class="stack">
+    <span>Win32 APIs</span>
+    <span>Windows Internals</span>
+    <span>Multi-threading</span>
+    <span>STL</span>
+    <span>Client-Server Architecture</span>
+    <span>REST APIs</span>
+    <span>gRPC</span>
+    <span>IPC</span>
+    <span>Endpoint Security</span>
+    <span>PCAP / Network Diagnostics</span>
+  </div>
+
   </aside>
 
   <!-- RIGHT CONTENT -->
@@ -189,9 +259,10 @@ h2 {
 
     <div class="hero">
       <h1>Building High-Performance Systems at Scale</h1>
-      <div class="tagline">Native Systems • Endpoint Security • Observability</div>
+      <div class="tagline">
+        Native Systems • Endpoint Security • Observability Platforms
+      </div>
 
-      <!-- FULL CONTENT AS BULLETS -->
       <ul class="impact-list">
         <li>15+ years of experience in modern C++ across application development, product engineering, and system-level programming.</li>
         <li>Expertise in building high-performance, scalable, and cross-platform software with deep Windows internals and system integration.</li>
@@ -208,8 +279,20 @@ h2 {
         <div class="metric"><strong>15+</strong>Years</div>
         <div class="metric"><strong>Millions</strong>Devices</div>
         <div class="metric"><strong>Staff+</strong>Leadership</div>
-        <div class="metric"><strong>Low Latency</strong>Systems</div>
+        <div class="metric"><strong>Low-Latency</strong>Systems</div>
       </div>
+    </div>
+
+    <!-- DOMAINS -->
+    <h2>Focus Areas</h2>
+    <div class="card">
+        • Endpoint security and client-side protection platforms<br>
+        • Windows system programming and deep OS integrations (Win32, diagnostics)<br>
+        • Observability, telemetry, and troubleshooting automation<br>
+        • High-performance native development with multi-threading and STL<br>
+        • Production reliability and large-scale customer issue reduction<br>
+        • Modular architecture and platform extensibility initiatives<br>
+
     </div>
 
     <!-- PROJECTS -->
@@ -217,32 +300,44 @@ h2 {
     <div class="card">
 
       <div class="project">
-        <a href="projects/touchless-troubleshooting.html" target="_blank">
-          Touchless Troubleshooting Platform →
+        <a href="projects/zscaler-agent.html">
+          Zscaler Native Agent Architecture →
         </a>
         <p>
-          Automated diagnostics and telemetry-driven remediation reducing manual debugging across distributed endpoints.
+          Multi-module C++ agent architecture handling telemetry, security enforcement,
+          and policy orchestration across enterprise endpoints.
         </p>
       </div>
 
       <div class="project">
-        <a href="projects/telemetry-events.html" target="_blank">
-          Telemetry Events Pipeline →
+        <a href="projects/observability-pipeline.html">
+          Planet-Scale Telemetry Pipeline →
         </a>
         <p>
-          High-volume event ingestion and observability pipeline powering real-time analytics and fleet-wide insights.
+          End-to-end distributed observability pipeline from endpoint ingestion 
+          to real-time analytics and dashboards.
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="projects/update-framework.html">
+          Secure Update Framework →
+        </a>
+        <p>
+          Multi-stage update orchestration with validation, signer verification,
+          and resilience across unreliable networks.
         </p>
       </div>
 
     </div>
 
-    <h2>Focus Areas</h2>
+    <!-- LEADERSHIP -->
+    <h2>Leadership</h2>
     <div class="card">
-      • Endpoint security platforms and deep OS integrations<br>
-      • Windows internals and system diagnostics<br>
-      • Telemetry and troubleshooting automation<br>
-      • Multi-threaded native performance engineering<br>
-      • Large-scale reliability and platform architecture
+      • Driving architecture for multi-team platform initiatives<br>
+      • Mentoring senior engineers and influencing org-level direction<br>
+      • Deep debugging and performance war-room ownership<br>
+      • Raising engineering bar through design reviews and standards
     </div>
 
   </main>
