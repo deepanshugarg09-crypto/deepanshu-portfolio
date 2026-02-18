@@ -13,14 +13,21 @@ body{
   color:#e5e7eb;
 }
 
+/* Layout */
 .container{
-  max-width:900px;
+  max-width:960px;
   margin:auto;
   padding:40px 20px;
 }
 
-h1{margin-bottom:10px;}
-h2{color:#60a5fa;margin-top:30px;}
+h1{
+  margin-bottom:6px;
+}
+
+h2{
+  color:#60a5fa;
+  margin-top:30px;
+}
 
 .back{
   color:#60a5fa;
@@ -29,6 +36,37 @@ h2{color:#60a5fa;margin-top:30px;}
   margin-bottom:20px;
 }
 
+/* Scale Callout */
+.scale{
+  color:#9ca3af;
+  font-size:0.95rem;
+  margin-bottom:14px;
+}
+
+/* Tags */
+.tags{
+  margin:10px 0 20px 0;
+}
+
+.tag{
+  display:inline-block;
+  background:#1f2937;
+  color:#cbd5f5;
+  padding:4px 10px;
+  border-radius:6px;
+  font-size:0.72rem;
+  margin:3px 6px 0 0;
+}
+
+/* Card */
+.card{
+  background:#111827;
+  padding:22px;
+  border-radius:12px;
+  border:1px solid #1f2937;
+}
+
+/* Diagram */
 img{
   max-width:100%;
   border-radius:10px;
@@ -36,11 +74,14 @@ img{
   border:1px solid #1f2937;
 }
 
-.card{
-  background:#111827;
-  padding:20px;
-  border-radius:12px;
-  border:1px solid #1f2937;
+/* Architecture list */
+.arch-list{
+  line-height:1.75;
+  padding-left:22px;
+}
+
+.arch-list li{
+  margin-bottom:10px;
 }
 </style>
 </head>
@@ -52,7 +93,23 @@ img{
 
 <h1>Annotate Telemetry Events</h1>
 
+<!-- Scale Callout -->
+<div class="scale">
+Production system handling telemetry signals from millions of Windows endpoints
+</div>
+
+<!-- Architectural Tags -->
+<div class="tags">
+  <span class="tag">C++</span>
+  <span class="tag">Windows Internals</span>
+  <span class="tag">Telemetry</span>
+  <span class="tag">Concurrency</span>
+  <span class="tag">SQLite</span>
+  <span class="tag">Diagnostics</span>
+</div>
+
 <div class="card">
+
 <h2>What this solution does</h2>
 <p>
 We have telemetry events raised by different windows services from millions of devices which we use to analyze the behaviour of our product and improve as and when a trend shows anomoly.
@@ -64,7 +121,7 @@ and by knowing the system state at the time when telemetry event was raised. Tha
 <img src="annotateevents.png" alt="Annotate Telemetry Events">
 
 <h2>Architectural Description</h2>
-<ul style="line-height:1.7; padding-left:18px;">
+<ul class="arch-list">
   <li><b>Singleton state tracking engine</b> — monitors OS-level environment changes (network, sleep/power, user sessions) via platform-specific monitors</li>
   
   <li><b>Thread-safe event ingestion</b> — state change events flow through a concurrent queue to a dedicated worker thread, decoupling producers from persistence</li>
@@ -75,8 +132,8 @@ and by knowing the system state at the time when telemetry event was raised. Tha
   
   <li><b>Cloud-gated activation</b> — library activates only when diagnostics and event annotation feature flags are enabled via cloud policy</li>
 </ul>
-</div>
 
+</div>
 </div>
 </body>
 </html>
