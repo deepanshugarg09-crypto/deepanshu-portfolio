@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Endpoint Telemetry Platform | Deepanshu Garg</title>
+<title>Touchless Troubleshooting | Deepanshu Garg</title>
 
 <style>
 body{
@@ -50,34 +50,29 @@ img{
 
 <a class="back" href="../index.html">← Back to Portfolio</a>
 
-<h1>Endpoint Telemetry Platform</h1>
+<h1>Touchless Troubleshooting</h1>
 
 <div class="card">
 <h2>What this solution does</h2>
 <p>
-Designed and built a high-scale telemetry ingestion platform that collects,
-processes, and visualizes endpoint health and behavioral signals across
-millions of devices. The platform enables real-time observability,
-troubleshooting, and proactive reliability improvements.
+Client logs are our first need to debug an issue and we really can not reach out to customer every time for logs.
+So, we decided to build a system that can fetch the logs from any of the 50 Million devices and upload it our server in no time.
+Vision is to proactively identify problematic devices from Grafana dashboard alerts, trigger remote log fetch, 
+including packet captures, generate real-time traffic, create a log bundle, and
+upload it for Zscaler support to review without customer involvement.
 </p>
 
 <h2>Architecture Diagram</h2>
-<img src="images/telemetry-arch.png" alt="Telemetry Architecture">
+<img src="touchlesstroubleshooting.png" alt="Telemetry Architecture">
 
 <h2>Architectural Description</h2>
 <p>
-The system follows a distributed ingestion model where endpoint agents
-stream structured telemetry to ingestion gateways. These gateways perform
-schema validation and batching before routing data into a streaming backbone.
-Downstream processors enrich events with metadata and forward them into
-columnar analytics stores optimized for time-series queries.
-</p>
-
-<p>
-Visualization layers integrate with observability tooling to enable
-fleet-wide diagnostics, anomaly detection, and customer-impact reduction.
-The design prioritizes low-latency ingestion, horizontal scalability,
-and schema evolution without breaking backward compatibility.
+Singleton + Worker Thread — RequestManager is a singleton with a dedicated background thread consuming from a thread-safe queue, decoupling request submission from processing.
+Strategy Pattern (Auth) — StatusReporter has two concrete strategies (ModernAuthReporter, LegacyAuthReporter) selected at runtime based on a feature flag.
+Pipeline Pattern — PipelineRegistry owns an ordered list of IPipelineStage implementations. Stages are executed sequentially; each stage can halt the pipeline via canProceedToNext.
+Dependency Inversion — The core library depends on callbacks (std::function) injected by PlatformAdapter, not on concrete platform types. This enables cross-platform reuse.
+TTL Deduplication Cache — Prevents re-processing of the same job within its validity window.
+Completion Wait (Packet Capture) — After the NetworkCapture stage, the registry spawns two parallel threads to race between a "stop" event and a "completion" event, with a configurable timeout.
 </p>
 </div>
 
