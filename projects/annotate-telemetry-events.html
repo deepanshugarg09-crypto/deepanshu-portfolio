@@ -64,13 +64,17 @@ and by knowing the system state at the time when telemetry event was raised. Tha
 <img src="annotateevents.png" alt="Annotate Telemetry Events">
 
 <h2>Architectural Description</h2>
-<p>
-Singleton state tracking engine — monitors OS-level environment changes (network, sleep/power, user sessions) via platform-specific monitors
-Thread-safe event ingestion — state change events flow through a concurrent queue to a dedicated worker thread, decoupling producers from persistence
-SQLite-backed persistence — events are stored locally with auto-purge (max 20K rows, cleanup every 2K insertions) to bound disk usage
-Query processor — external consumers ask "what was the system state at time T?" and get back annotated responses (network/sleep/session state + transitioning flag)
-Cloud-gated activation — the library only activates when both diagnostics and event annotation feature flags are enabled via cloud policy
-</p>
+<ul style="line-height:1.7; padding-left:18px;">
+  <li><b>Singleton state tracking engine</b> — monitors OS-level environment changes (network, sleep/power, user sessions) via platform-specific monitors</li>
+  
+  <li><b>Thread-safe event ingestion</b> — state change events flow through a concurrent queue to a dedicated worker thread, decoupling producers from persistence</li>
+  
+  <li><b>SQLite-backed persistence</b> — events are stored locally with auto-purge (max 20K rows, cleanup every 2K insertions) to bound disk usage</li>
+  
+  <li><b>Query processor</b> — external consumers query system state at time <i>T</i> and receive annotated responses (network/sleep/session state + transitioning flag)</li>
+  
+  <li><b>Cloud-gated activation</b> — library activates only when diagnostics and event annotation feature flags are enabled via cloud policy</li>
+</ul>
 </div>
 
 </div>
