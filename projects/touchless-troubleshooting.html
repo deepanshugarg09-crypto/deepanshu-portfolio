@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endpoint Telemetry Platform | Deepanshu Garg</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:#0b0f19;
+  color:#e5e7eb;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+h1{margin-bottom:10px;}
+h2{color:#60a5fa;margin-top:30px;}
+
+.back{
+  color:#60a5fa;
+  text-decoration:none;
+  display:inline-block;
+  margin-bottom:20px;
+}
+
+img{
+  max-width:100%;
+  border-radius:10px;
+  margin-top:15px;
+  border:1px solid #1f2937;
+}
+
+.card{
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid #1f2937;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<a class="back" href="../index.html">← Back to Portfolio</a>
+
+<h1>Endpoint Telemetry Platform</h1>
+
+<div class="card">
+<h2>What this solution does</h2>
+<p>
+Designed and built a high-scale telemetry ingestion platform that collects,
+processes, and visualizes endpoint health and behavioral signals across
+millions of devices. The platform enables real-time observability,
+troubleshooting, and proactive reliability improvements.
+</p>
+
+<h2>Architecture Diagram</h2>
+<img src="images/telemetry-arch.png" alt="Telemetry Architecture">
+
+<h2>Architectural Description</h2>
+<p>
+The system follows a distributed ingestion model where endpoint agents
+stream structured telemetry to ingestion gateways. These gateways perform
+schema validation and batching before routing data into a streaming backbone.
+Downstream processors enrich events with metadata and forward them into
+columnar analytics stores optimized for time-series queries.
+</p>
+
+<p>
+Visualization layers integrate with observability tooling to enable
+fleet-wide diagnostics, anomaly detection, and customer-impact reduction.
+The design prioritizes low-latency ingestion, horizontal scalability,
+and schema evolution without breaking backward compatibility.
+</p>
+</div>
+
+</div>
+</body>
+</html>
