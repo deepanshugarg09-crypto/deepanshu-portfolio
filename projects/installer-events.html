@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Endpoint Telemetry Platform | Deepanshu Garg</title>
+<title>Installer Events Telemetry | Deepanshu Garg</title>
 
 <style>
 body{
@@ -50,35 +50,18 @@ img{
 
 <a class="back" href="../index.html">← Back to Portfolio</a>
 
-<h1>Endpoint Telemetry Platform</h1>
+<h1>Installer Events Telemetry</h1>
 
 <div class="card">
 <h2>What this solution does</h2>
 <p>
-Designed and built a high-scale telemetry ingestion platform that collects,
-processes, and visualizes endpoint health and behavioral signals across
-millions of devices. The platform enables real-time observability,
-troubleshooting, and proactive reliability improvements.
+While upgrading our client from one version to another version, fresh install, architecture upgrade/downgrade, we currently raise telemetry events pre and post of installer click. 
+Now what happens during installer is running, it was still a black box. This change in installer raises events, giving us the picture what happens during installation. 
+At any point of time, an installer will generate either success Event or fail event with context of installer being launched.  
 </p>
 
 <h2>Architecture Diagram</h2>
-<img src="images/telemetry-arch.png" alt="Telemetry Architecture">
-
-<h2>Architectural Description</h2>
-<p>
-The system follows a distributed ingestion model where endpoint agents
-stream structured telemetry to ingestion gateways. These gateways perform
-schema validation and batching before routing data into a streaming backbone.
-Downstream processors enrich events with metadata and forward them into
-columnar analytics stores optimized for time-series queries.
-</p>
-
-<p>
-Visualization layers integrate with observability tooling to enable
-fleet-wide diagnostics, anomaly detection, and customer-impact reduction.
-The design prioritizes low-latency ingestion, horizontal scalability,
-and schema evolution without breaking backward compatibility.
-</p>
+<img src="installerevents.png" alt="Telemetry Architecture">
 </div>
 
 </div>
