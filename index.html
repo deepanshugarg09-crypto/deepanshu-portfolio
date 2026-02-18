@@ -7,73 +7,120 @@
 
 <style>
 :root {
-  --bg: #0b0f19;
-  --panel: #020617;
-  --card: #111827;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --accent: #60a5fa;
-  --border: #1f2937;
+  --bg:#0b0f19;
+  --panel:#020617;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#60a5fa;
+  --border:#1f2937;
 }
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box}
 
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  min-height: 100vh;
+.wrapper{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  min-height:100vh;
 }
 
-/* SIDEBAR (unchanged) */
-.sidebar {
-  background: var(--panel);
-  border-right: 1px solid var(--border);
-  padding: 22px 16px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
+/* SIDEBAR */
+.sidebar{
+  background:var(--panel);
+  border-right:1px solid var(--border);
+  padding:22px 16px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
 }
 
-/* RIGHT SIDE */
-.content {
-  padding: 28px 42px; /* 🔥 reduced hero spacing */
+.name{font-size:1.35rem;font-weight:700;}
+.role{color:var(--muted);font-size:0.85rem;margin-bottom:12px;}
+
+.download{
+  display:block;
+  background:#2563eb;
+  color:white;
+  text-align:center;
+  padding:9px;
+  border-radius:8px;
+  font-weight:600;
+  margin:14px 0;
+  text-decoration:none;
+  font-size:0.9rem;
 }
 
-/* HERO */
-.hero h1 { margin:0; font-size:2.35rem; }
-.tagline { color:var(--muted); margin-top:6px; }
+.section-title{
+  font-size:0.68rem;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:14px;
+  margin-bottom:4px;
+}
 
-/* BULLETS tighter */
-.impact { margin-top:16px; padding-left:0; }
-.impact li {
+.contact{font-size:0.85rem;line-height:1.5;}
+.contact a{color:var(--accent);text-decoration:none;}
+
+.stack span{
+  display:inline-block;
+  background:#1f2937;
+  padding:3px 7px;
+  border-radius:5px;
+  margin:3px 3px 0 0;
+  font-size:0.70rem;
+}
+
+/* RIGHT */
+.content{
+  padding:28px 42px; /* reduced hero spacing */
+}
+
+.hero h1{margin:0;font-size:2.35rem;}
+.tagline{color:var(--muted);margin-top:6px;}
+
+.impact{margin-top:16px;padding-left:0;}
+.impact li{
   list-style:none;
   display:flex;
   gap:10px;
   margin-bottom:8px;
-  line-height:1.5;
+  line-height:1.55;
 }
+.icon{color:var(--accent)}
 
-/* METRICS tighter */
-.metrics { display:flex; gap:14px; margin-top:14px; flex-wrap:wrap; }
+.metrics{
+  display:flex;
+  gap:14px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.metric{
+  background:#020617;
+  border:1px solid var(--border);
+  padding:12px;
+  border-radius:10px;
+  min-width:110px;
+  text-align:center;
+}
 
 /* CARDS */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px;
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:18px;
 }
 
-/* SIDE BY SIDE SECTIONS */
-.dual {
+/* SIDE BY SIDE */
+.dual{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
@@ -81,14 +128,14 @@ body {
 }
 
 /* PROJECTS */
-.projects { margin-top:34px; }
-.project-toggle {
+.projects{margin-top:34px;}
+.project-toggle{
   cursor:pointer;
   color:var(--accent);
   font-weight:600;
-  margin-top:10px;
+  margin-top:12px;
 }
-.project-content {
+.project-content{
   display:none;
   margin-top:10px;
   padding:14px;
@@ -96,16 +143,21 @@ body {
   border-radius:10px;
   background:var(--card);
 }
-.project-content img {
+.project-content img{
   max-width:100%;
   border-radius:8px;
   margin-top:10px;
 }
 
-/* Responsive */
+h2{
+  color:var(--accent);
+  font-size:1.15rem;
+  margin:28px 0 10px;
+}
+
 @media(max-width:900px){
-  .wrapper{ grid-template-columns:1fr; }
-  .dual{ grid-template-columns:1fr; }
+  .wrapper{grid-template-columns:1fr;}
+  .dual{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -113,33 +165,84 @@ body {
 <body>
 <div class="wrapper">
 
-<!-- LEFT PANEL (UNCHANGED) -->
 <aside class="sidebar">
-  <!-- KEEP YOUR SIDEBAR EXACTLY AS IS -->
-  <!-- I did not modify content -->
+  <div class="name">Deepanshu Garg</div>
+  <div class="role">Senior Staff Software Engineer</div>
+
+  <a href="Deepanshu_Garg_Resume.pdf" download class="download">⬇ Download Resume</a>
+
+  <div class="section-title">Contact</div>
+  <div class="contact">
+    📧 deepanshugargcpp@outlook.com<br>
+    📱 +91-9819935307<br>
+    🔗 <a href="https://www.linkedin.com/in/deepanshugarg-cpp" target="_blank">LinkedIn</a><br>
+    💻 <a href="https://github.com/deepanshugarg09-crypto" target="_blank">GitHub</a>
+  </div>
+
+  <div class="section-title">Languages</div>
+  <div class="stack">
+    <span>C++ (98/11/14/17)</span><span>Python</span><span>C#</span>
+  </div>
+
+  <div class="section-title">Databases</div>
+  <div class="stack">
+    <span>SQL Server</span><span>Oracle</span><span>SQLite</span>
+  </div>
+
+  <div class="section-title">Telemetry & Observability</div>
+  <div class="stack">
+    <span>Grafana</span><span>KQL</span><span>Azure Data Explorer (ADX)</span>
+    <span>Telemetry Design</span><span>Diagnostics Pipelines</span>
+  </div>
+
+  <div class="section-title">Tools</div>
+  <div class="stack">
+    <span>Git</span><span>Bitbucket</span><span>GitLab</span><span>JIRA</span>
+    <span>Dependency Walker</span><span>Sysinternals Suite</span>
+    <span>WinDbg</span><span>ProcMon</span><span>Wireshark</span>
+  </div>
+
+  <div class="section-title">Testing</div>
+  <div class="stack">
+    <span>Google Test (gTest)</span><span>Unit Testing</span><span>Integration Testing</span>
+  </div>
+
+  <div class="section-title">Technologies</div>
+  <div class="stack">
+    <span>Win32 APIs</span><span>Windows Internals</span><span>Multi-threading</span>
+    <span>STL</span><span>Client-Server Architecture</span><span>REST APIs</span>
+    <span>gRPC</span><span>IPC</span><span>Endpoint Security</span>
+    <span>PCAP / Network Diagnostics</span>
+  </div>
 </aside>
 
-<!-- RIGHT CONTENT -->
 <main class="content">
 
 <div class="hero">
   <h1>Building High-Performance Systems at Scale</h1>
-  <div class="tagline">
-    Native Systems • Endpoint Security • Observability Platforms
-  </div>
+  <div class="tagline">Native Systems • Endpoint Security • Observability Platforms</div>
 
   <ul class="impact">
-    <!-- YOUR BULLETS UNCHANGED -->
+    <li><span class="icon">✓</span>Senior Staff-level engineer with 15+ years of experience in modern C++ across application development, product engineering, and system-level programming.</li>
+    <li><span class="icon">✓</span>Expertise in building high-performance, scalable, cross-platform software with strong focus on Windows internals and system integration.</li>
+    <li><span class="icon">✓</span>Deep experience in multithreading, STL, performance optimization, and endpoint security systems.</li>
+    <li><span class="icon">✓</span>Built telemetry-driven platforms and data-intensive solutions for large-scale environments.</li>
+    <li><span class="icon">✓</span>Hands-on experience integrating AI-driven components such as NER-based redaction and large-scale entity extraction.</li>
+    <li><span class="icon">✓</span>Actively leverage AI tools for code generation, debugging, design exploration, and developer productivity.</li>
+    <li><span class="icon">✓</span>Provide technical leadership through mentoring, code reviews, and driving engineering excellence in Agile teams.</li>
+    <li><span class="icon">✓</span>Additional hands-on experience with Python, C#, databases, and cloud fundamentals.</li>
+    <li><span class="icon">✓</span>AWS Certified Cloud Practitioner.</li>
   </ul>
 
   <div class="metrics">
-    <!-- YOUR METRICS UNCHANGED -->
+    <div class="metric"><strong>15+</strong>Years</div>
+    <div class="metric"><strong>Millions</strong>Devices</div>
+    <div class="metric"><strong>Staff+</strong>Leadership</div>
+    <div class="metric"><strong>Low-Latency</strong>Systems</div>
   </div>
 </div>
 
-<!-- 🔥 Focus + Leadership SIDE BY SIDE -->
 <div class="dual">
-
   <div>
     <h2>Focus Areas</h2>
     <div class="card">
@@ -148,7 +251,7 @@ body {
       • Observability, telemetry, and troubleshooting automation<br>
       • High-performance native development with multi-threading and STL<br>
       • Production reliability and large-scale customer issue reduction<br>
-      • Modular architecture and platform extensibility initiatives<br>
+      • Modular architecture and platform extensibility initiatives
     </div>
   </div>
 
@@ -161,33 +264,20 @@ body {
       • Raising engineering bar through design reviews and standards
     </div>
   </div>
-
 </div>
 
-<!-- EXISTING ARCHITECTURE WORK (UNCHANGED) -->
-<h2>Selected Architecture Work</h2>
-<div class="card">
-  <!-- keep your links unchanged -->
-</div>
-
-<!-- 🔥 NEW: MOST RECENT PROJECTS -->
+<h2>Most Recent Projects</h2>
 <div class="projects">
-  <h2>Most Recent Projects</h2>
-
-  <div class="project-toggle" onclick="toggleProject('p1')">
-    ▶ Endpoint Telemetry Platform
-  </div>
+  <div class="project-toggle" onclick="toggleProject('p1')">▶ Endpoint Telemetry Platform</div>
   <div id="p1" class="project-content">
-    Add your architecture screenshot below.
-    <img src="images/telemetry.png">
+    High-scale distributed telemetry ingestion and analytics pipeline.
+    <img src="project1.png">
   </div>
 
-  <div class="project-toggle" onclick="toggleProject('p2')">
-    ▶ Secure Update Framework
-  </div>
+  <div class="project-toggle" onclick="toggleProject('p2')">▶ Secure Update Framework</div>
   <div id="p2" class="project-content">
-    Add your architecture screenshot below.
-    <img src="images/update.png">
+    Multi-stage secure update orchestration with validation and signer verification.
+    <img src="project2.png">
   </div>
 </div>
 
@@ -196,8 +286,8 @@ body {
 
 <script>
 function toggleProject(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
+  const el=document.getElementById(id);
+  el.style.display=el.style.display==="block"?"none":"block";
 }
 </script>
 
